@@ -1,0 +1,15 @@
+#First create a base image which will install all the dependencies
+FROM node:20-alpine
+#Set the working dircetory in which the code will be stored
+WORKDIR /app
+#Copy the package.json and package-lock.json to the working directory
+COPY package*.json ./
+#Install all the required dependencies
+RUN npm install
+#Copy the source code to the working directory
+COPY . .
+#Epose the port number on which our application will be running
+EXPOSE 3500
+#Run the application
+CMD ["node", "index.js"]
+

@@ -24,6 +24,7 @@ services:
   backend:
     build:
       context: ./backend
+      
       dockerfile: Dockerfile
     container_name: backend
     restart: always
@@ -38,6 +39,7 @@ services:
       - app-network
     healthcheck: 
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      
       interval: 10s
       timeout: 5s
       retries: 5

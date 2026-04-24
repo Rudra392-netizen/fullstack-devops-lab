@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = "dockerhub-creds"
+        FRONTEND_IMAGE = "aiml074/frontend"
+        BACKEND_IMAGE = "aiml074/backend"
+    }
+
+    stages {
+
+        stage("Code") {
+            steps {
+                echo "Cloning code from GitHub"
+                git url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch: "main"
+            }
+        }
+
+        stage("Build") {
+            steps {
+                echo "Building Docker images"
+                sh "docker build -t $FRONTEND_IMAGE:latest ./frontend"
+                sh "docker build -t $BACKEND_IMAGE:latest ./backend"
+            }
+        }
+
+        stage("Push to DockerHub") {
+            steps {
+                echo "Pushing images to DockerHub"
+
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh 'echo $PASS | docker login -u $USER --password-stdin'
+                }
+
+                sh "docker push $FRONTEND_IMAGE:latest"
+                sh "docker push $BACKEND_IMAGE:latest"
+            }
+        }
+
+        stage("Deploy using Docker Compose") {
+            steps {
+                echo "Deploying using Docker Compose"
+                sh "docker compose down || true"
+                sh "docker compose up -d"
+            }
+        }
+    }
+}

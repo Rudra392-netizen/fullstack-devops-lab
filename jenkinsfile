@@ -43,7 +43,7 @@ pipeline {
 
         stage("Deploy using Docker Compose") {
             steps {
-                dir (Application-Code){ 
+                dir ("Application-Code"){ 
                 sh "docker compose down || true"
                 sh "docker compose up -d"
                 }

@@ -1,6 +1,8 @@
 @Library("my-shared-library") _
+
 pipeline {
     agent any
+
     environment {
         DOCKERHUB_CREDENTIALS = "dockerHubCred"
         FRONTEND_IMAGE = "aiml074/frontend"
@@ -10,60 +12,77 @@ pipeline {
         SONAR_URL = "http://172.23.203.6:9000"
         EMAIL_RECEIPENT = "rpsingh98188@gmail.com"
     }
+
     stages {
-        stage("clone code"){
-            steps{
-                git url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch:"main"
+
+        stage("Clone Code") {
+            steps {
+                checkoutCode(
+                    "https://github.com/Rudra392-netizen/fullstack-devops-lab.git",
+                    "main"
+                )
             }
         }
-        stage("Install Dependencies, Libraries"){
-            steps{
+
+        stage("Install Dependencies") {
+            steps {
                 installNode("Application-Code/backend")
             }
         }
-        stage("Unit Testing"){
-            steps{
+
+        stage("Unit Testing") {
+            steps {
                 runTest("Application-Code/backend")
             }
         }
-        stage("Sonarqube_Analysis"){
-            steps{
-                runSonarQube("Application-Code/backend", env.SONAR_CREDENTIALS, env.SONAR_URL, env PROJECT_KEY)
+
+        stage("SonarQube Analysis") {
+            steps {
+                runSonarQube(
+                    "Application-Code/backend",
+                    env.PROJECT_KEY,
+                    env.SONAR_URL,
+                    env.SONAR_CREDENTIALS
+                )
             }
         }
-        stage("quality gate"){
-            steps{
+
+        stage("Quality Gate") {
+            steps {
                 qualityGate()
             }
         }
-        stage("Build docker image"){
-            steps{
+
+        stage("Build Docker Image") {
+            steps {
                 buildwithDocker(env.FRONTEND_IMAGE, "Application-Code/frontend")
                 buildwithDocker(env.BACKEND_IMAGE, "Application-Code/backend")
             }
         }
-        stage("docker image scanning using trivy"){
-            steps{
+
+        stage("Trivy Scan") {
+            steps {
                 runTrivy(env.FRONTEND_IMAGE)
                 runTrivy(env.BACKEND_IMAGE)
             }
         }
-        stage("push docker image to dockerhub"){
-            steps{
+
+        stage("Push Docker Image") {
+            steps {
                 pushToDockerHub(env.FRONTEND_IMAGE, env.DOCKERHUB_CREDENTIALS)
                 pushToDockerHub(env.BACKEND_IMAGE, env.DOCKERHUB_CREDENTIALS)
-
             }
         }
-        stage("Deploy the app on k8 cluster"){
-            steps{
+
+        stage("Deploy to K8s") {
+            steps {
                 k8deploy("K8s/")
             }
         }
     }
-    post{
-        always{
-            //Email Notification from shared_library
+
+    post {
+        always {
             emailNotification(env.EMAIL_RECEIPENT)
         }
     }

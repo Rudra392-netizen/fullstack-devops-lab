@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("clone code"){
             steps{
-                git_url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch:"main"
+                git url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch:"main"
             }
         }
         stage("Install Dependencies, Libraries"){

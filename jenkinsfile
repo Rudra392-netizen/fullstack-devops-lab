@@ -14,13 +14,9 @@ pipeline {
     }
 
     stages {
-
         stage("Clone Code") {
-            steps {
-                checkoutCode(
-                    "https://github.com/Rudra392-netizen/fullstack-devops-lab.git",
-                    "main"
-                )
+             steps {
+                git url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch: "main"
             }
         }
 

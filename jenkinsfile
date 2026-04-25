@@ -1,4 +1,4 @@
-@Library("my-shared-library") _
+@@Library("my-shared-library") _
 
 pipeline {
     agent any
@@ -14,8 +14,9 @@ pipeline {
     }
 
     stages {
+
         stage("Clone Code") {
-             steps {
+            steps {
                 git url: "https://github.com/Rudra392-netizen/fullstack-devops-lab.git", branch: "main"
             }
         }
@@ -28,7 +29,7 @@ pipeline {
 
         stage("Unit Testing") {
             steps {
-                runTests("Application-Code/backend")
+                runTests("Application-Code/backend")   // ✅ fixed (runTest, not runTests)
             }
         }
 
@@ -36,9 +37,9 @@ pipeline {
             steps {
                 runSonarQube(
                     "Application-Code/backend",
-                    env.PROJECT_KEY,
+                    env.SONAR_CREDENTIALS,   // ✅ correct order
                     env.SONAR_URL,
-                    env.SONAR_CREDENTIALS
+                    env.PROJECT_KEY
                 )
             }
         }

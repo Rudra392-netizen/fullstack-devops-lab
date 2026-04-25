@@ -29,7 +29,7 @@ pipeline {
 
         stage("Unit Testing") {
             steps {
-                runTests("Application-Code/backend")   // ✅ fixed (runTest, not runTests)
+                runTests("Application-Code/backend")   //
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 runSonarQube(
                     "Application-Code/backend",
-                    env.SONAR_CREDENTIALS,   // ✅ correct order
+                    env.SONAR_CREDENTIALS,   // 
                     env.SONAR_URL,
                     env.PROJECT_KEY
                 )
@@ -73,7 +73,7 @@ pipeline {
 
         stage("Deploy to K8s") {
             steps {
-                k8deploy("K8s/")
+                k8deploy()
             }
         }
     }

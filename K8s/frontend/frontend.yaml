@@ -5,6 +5,10 @@ metadata:
 
 spec:
   replicas: 2
+
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       app: frontend
@@ -17,7 +21,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: aiml074/frontend:latest
+          image: aiml074/frontend:v1
           ports:
             - containerPort: 80
           

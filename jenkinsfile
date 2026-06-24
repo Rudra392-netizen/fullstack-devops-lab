@@ -52,33 +52,42 @@ pipeline {
 
         stage("Build Docker Image") {
             steps {
-                buildwithDocker(env.FRONTEND_IMAGE, "Application-Code/frontend")
-                buildwithDocker(env.BACKEND_IMAGE, "Application-Code/backend")
+                buildwithDocker(env.FRONTEND_IMAGE, env.IMAGE_TAG, "Application-Code/frontend")
+                buildwithDocker(env.BACKEND_IMAGE, env.IMAGE_TAG, "Application-Code/backend")
             }
         }
 
         stage("Trivy Scan") {
             steps {
-                runTrivy(env.FRONTEND_IMAGE)
-                runTrivy(env.BACKEND_IMAGE)
+                runTrivy(env.FRONTEND_IMAGE, env.IMAGE_TAG)
+                runTrivy(env.BACKEND_IMAGE, env.IMAGE_TAG)
             }
         }
 
         stage("Push Docker Image") {
             steps {
-                pushToDockerHub(env.FRONTEND_IMAGE, env.DOCKERHUB_CREDENTIALS)
-                pushToDockerHub(env.BACKEND_IMAGE, env.DOCKERHUB_CREDENTIALS)
+                pushToDockerHub(env.FRONTEND_IMAGE, env.DOCKERHUB_CREDENTIALS, env.IMAGE_TAG)
+                pushToDockerHub(env.BACKEND_IMAGE, env.DOCKERHUB_CREDENTIALS, env.IMAGE_TAG)
             }
         }
 
         stage("Deploy to K8s") {
             steps {
-                k8deploy()
+                k8deploy(env.BUILD_NUMBER)
             }
         }
     }
 
     post {
+
+        failure {
+            sh '''
+        kubectl rollout undo deployment/backend-deployment
+        kubectl rollout undo deployment/frontend-deployment
+        '''
+
+        echo "Rollback executed successfully"
+        }
         always {
             emailNotification(env.EMAIL_RECEIPENT)
         }

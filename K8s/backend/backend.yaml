@@ -4,7 +4,11 @@ metadata:
   name: backend-deployment
 
 spec:
-  replicas: 2
+  replicas: 3
+  
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       app: backend
@@ -17,7 +21,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: aiml074/backend:latest
+          image: aiml074/backend:v1
           ports:
             - containerPort: 80
           

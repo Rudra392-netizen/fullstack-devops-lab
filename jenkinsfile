@@ -53,8 +53,8 @@ pipeline {
 
         stage("Build Docker Image") {
             steps {
-                buildwithDocker(env.FRONTEND_IMAGE, env.IMAGE_TAG, "Application-Code/frontend")
-                buildwithDocker(env.BACKEND_IMAGE, env.IMAGE_TAG, "Application-Code/backend")
+                buildwithDocker(env.FRONTEND_IMAGE,"Application-Code/frontend", env.IMAGE_TAG)
+                buildwithDocker(env.BACKEND_IMAGE,"Application-Code/backend", env.IMAGE_TAG)
             }
         }
 

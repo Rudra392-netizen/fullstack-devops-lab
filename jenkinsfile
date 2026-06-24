@@ -6,8 +6,8 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = "dockerHubCred"
         FRONTEND_IMAGE = "aiml074/frontend"
-        IMAGE_TAG = "v1"
         BACKEND_IMAGE = "aiml074/backend"
+        IMAGE_TAG = "v1"
         SONAR_CREDENTIALS = "sonarqube"
         PROJECT_KEY = "fullstack-devops-lab"
         SONAR_URL = "http://172.23.203.6:9000"

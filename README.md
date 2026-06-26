@@ -742,7 +742,7 @@ The following screenshots demonstrate different stages of the project.
 
 ## 📧 Successful Email Notification
 
-![image_alt[(https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20200152.png?raw=true)
+![image_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20200152.png?raw=true)
 
 <p align="center"> <em>Automated email notification sent by Jenkins after successful pipeline execution and deployment.</em> </p>
 

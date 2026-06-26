@@ -718,7 +718,7 @@ The following screenshots demonstrate different stages of the project.
 
 ## 📚 Jenkins Shared Library
 
-![image_alt}()
+![image_alt}(https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20213903.png?raw=true)
 
 <p align="center"> <em>Declarative Jenkins Pipeline integrated with a Shared Library to improve reusability, maintainability, and pipeline organization.</em> </p>
 

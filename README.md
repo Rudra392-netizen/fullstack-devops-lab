@@ -730,6 +730,8 @@ The following screenshots demonstrate different stages of the project.
 
 ## 📦 DockerHub Repository
 
+![iamge_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20200010.png?raw=true)
+
 <p align="center"> <em>DockerHub repositories containing frontend and backend application images automatically published by the Jenkins pipeline.</em> </p>
 
 ## ☸️ Kubernetes Pods & Services

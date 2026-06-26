@@ -407,11 +407,6 @@ The purpose of this integration is to identify potential issues early in the dev
 - Security Issues
 - Vulnerabilities
 - Maintainability Problems
-
-> 📸 **Screenshot Placeholder**
->
-> Add your SonarQube Dashboard screenshot here.
-
 ---
 
 # 🛡️ Trivy Security Scanning
@@ -430,8 +425,9 @@ This improves the security of the deployment process and introduces basic DevSec
 - Security Risks inside Docker Images
 
 > 📸 **Screenshot Placeholder**
->
-> Add your Trivy report or terminal output here.
+
+<img width="1777" height="836" alt="Screenshot 2026-04-25 164400" src="https://github.com/user-attachments/assets/0c53e71f-3555-449e-823f-5036aebf1c5e" />
+
 
 ---
 
@@ -743,6 +739,19 @@ The following screenshots demonstrate different stages of the project.
 
 
 <p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
+
+## Rolling Update Demo
+
+<img width="1093" height="262" alt="Screenshot 2026-06-26 202204" src="https://github.com/user-attachments/assets/334b28d6-bacd-4b4e-8fdb-7bc19e1c0271" />
+
+---
+
+## Rollback Demo
+
+<img width="1105" height="86" alt="Screenshot 2026-06-26 202548" src="https://github.com/user-attachments/assets/424463c4-13f2-4df4-8041-4e89315dfb6f" />
+
+
+---
 
 ## 📧 Successful Email Notification
 

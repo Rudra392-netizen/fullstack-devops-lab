@@ -724,25 +724,21 @@ The following screenshots demonstrate different stages of the project.
 
 ## 🔍 SonarQube Dashboard
 
-<p align="center"> <img src="images/sonarqube-dashboard.png" alt="SonarQube Dashboard" width="100%"> </p>
+![image alt]()
 
 <p align="center"> <em>SonarQube analysis dashboard showing a successful Quality Gate with maintainability, reliability, and security checks.</em> </p>
 
 ## 📦 DockerHub Repository
 
-<p align="center"> <img src="images/dockerhub-repository.png" alt="DockerHub Repository" width="100%"> </p>
-
 <p align="center"> <em>DockerHub repositories containing frontend and backend application images automatically published by the Jenkins pipeline.</em> </p>
 
 ## ☸️ Kubernetes Pods & Services
 
-<p align="center"> <img src="images/kubernetes-pods-services.png" alt="Kubernetes Pods and Services" width="100%"> </p>
 
 <p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
 
 ## 📧 Successful Email Notification
 
-<p align="center"> <img src="images/email-notification.png" alt="Email Notification" width="100%"> </p>
 
 <p align="center"> <em>Automated email notification sent by Jenkins after successful pipeline execution and deployment.</em> </p>
 

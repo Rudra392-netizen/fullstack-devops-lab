@@ -736,7 +736,7 @@ The following screenshots demonstrate different stages of the project.
 
 ## ☸️ Kubernetes Pods & Services
 
-![image_alt]()
+![image_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162504.png?raw=true)
 
 <p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
 

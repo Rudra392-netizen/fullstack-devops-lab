@@ -712,37 +712,42 @@ The following screenshots demonstrate different stages of the project.
 
 ## 🚀 Jenkins Pipeline
 
-![image alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162224.png?raw=true)
+<img width="1895" height="726" alt="Screenshot 2026-04-25 162224" src="https://github.com/user-attachments/assets/a377dbc8-ef66-40ba-aaae-5e7ea6eae0cb" />
 
 <p align="center"> <em>Successful Jenkins CI/CD pipeline execution showing source code checkout, dependency installation, SonarQube analysis, Quality Gate verification, Docker image build, Trivy scan, DockerHub push, Kubernetes deployment, and email notification stages.</em> </p>
 
 ## 📚 Jenkins Shared Library
 
-![image_alt}(https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20213903.png?raw=true)
+<img width="1492" height="767" alt="Screenshot 2026-06-26 213903" src="https://github.com/user-attachments/assets/3feab1ec-9eb3-4f07-b667-111e0c25ffe3" />
+
 
 <p align="center"> <em>Declarative Jenkins Pipeline integrated with a Shared Library to improve reusability, maintainability, and pipeline organization.</em> </p>
 
 ## 🔍 SonarQube Dashboard
 
-![image alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162242.png?raw=true)
+<img width="1919" height="929" alt="Screenshot 2026-04-25 162242" src="https://github.com/user-attachments/assets/f8416c0f-b7d9-4bb4-8830-3144d4d1e4fa" />
+
 
 <p align="center"> <em>SonarQube analysis dashboard showing a successful Quality Gate with maintainability, reliability, and security checks.</em> </p>
 
 ## 📦 DockerHub Repository
 
-![iamge_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20200010.png?raw=true)
+<img width="1882" height="701" alt="Screenshot 2026-06-26 200010" src="https://github.com/user-attachments/assets/9e43b10c-2792-4c7b-887e-4441779a9496" />
+
 
 <p align="center"> <em>DockerHub repositories containing frontend and backend application images automatically published by the Jenkins pipeline.</em> </p>
 
 ## ☸️ Kubernetes Pods & Services
 
-![image_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162504.png?raw=true)
+<img width="813" height="528" alt="Screenshot 2026-04-25 162504" src="https://github.com/user-attachments/assets/ee6473d6-b418-41f0-a572-873d429568e3" />
+
 
 <p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
 
 ## 📧 Successful Email Notification
 
-![image_alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-06-26%20200152.png?raw=true)
+<img width="1517" height="717" alt="Screenshot 2026-06-26 200152" src="https://github.com/user-attachments/assets/a60a68cd-1afe-4f5b-8227-de36122676c8" />
+
 
 <p align="center"> <em>Automated email notification sent by Jenkins after successful pipeline execution and deployment.</em> </p>
 

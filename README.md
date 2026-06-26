@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
 
 # 🚀 Production-Ready Full Stack DevOps CI/CD Pipeline
 
@@ -710,9 +710,9 @@ Instead of manually checking the Jenkins dashboard, the pipeline status is deliv
 
 The following screenshots demonstrate different stages of the project.
 
-🚀 Jenkins Pipeline
+## 🚀 Jenkins Pipeline
 
-<p align="center"> <img src="images/jenkins-pipeline.png" alt="Jenkins Pipeline" width="100%"> </p>
+![image alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162224.png?raw=true)
 
 <p align="center"> <em>Successful Jenkins CI/CD pipeline execution showing source code checkout, dependency installation, SonarQube analysis, Quality Gate verification, Docker image build, Trivy scan, DockerHub push, Kubernetes deployment, and email notification stages.</em> </p>
 

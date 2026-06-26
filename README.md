@@ -706,69 +706,45 @@ Instead of manually checking the Jenkins dashboard, the pipeline status is deliv
 
 ---
 
-# 📸 Project Screenshots
+## 📸 Project Screenshots
 
 The following screenshots demonstrate different stages of the project.
 
-## Jenkins Pipeline
+🚀 Jenkins Pipeline
 
-> 📷 Add Jenkins Pipeline Screenshot here
+<p align="center"> <img src="images/jenkins-pipeline.png" alt="Jenkins Pipeline" width="100%"> </p>
 
----
+<p align="center"> <em>Successful Jenkins CI/CD pipeline execution showing source code checkout, dependency installation, SonarQube analysis, Quality Gate verification, Docker image build, Trivy scan, DockerHub push, Kubernetes deployment, and email notification stages.</em> </p>
 
-## Jenkins Shared Library
+## 📚 Jenkins Shared Library
 
-> 📷 Add VS Code Screenshot of Shared Library here
+<p align="center"> <img src="images/jenkins-shared-library.png" alt="Jenkins Shared Library" width="100%"> </p>
 
----
+<p align="center"> <em>Declarative Jenkins Pipeline integrated with a Shared Library to improve reusability, maintainability, and pipeline organization.</em> </p>
 
-## SonarQube Dashboard
+## 🔍 SonarQube Dashboard
 
-> 📷 Add SonarQube Dashboard Screenshot here
+<p align="center"> <img src="images/sonarqube-dashboard.png" alt="SonarQube Dashboard" width="100%"> </p>
 
----
+<p align="center"> <em>SonarQube analysis dashboard showing a successful Quality Gate with maintainability, reliability, and security checks.</em> </p>
 
-## DockerHub Repository
+## 📦 DockerHub Repository
 
-> 📷 Add DockerHub Screenshot here
+<p align="center"> <img src="images/dockerhub-repository.png" alt="DockerHub Repository" width="100%"> </p>
 
----
+<p align="center"> <em>DockerHub repositories containing frontend and backend application images automatically published by the Jenkins pipeline.</em> </p>
 
-## Trivy Scan Report
+## ☸️ Kubernetes Pods & Services
 
-> 📷 Add Trivy Report Screenshot here
+<p align="center"> <img src="images/kubernetes-pods-services.png" alt="Kubernetes Pods and Services" width="100%"> </p>
 
----
+<p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
 
-## Kubernetes Pods
+## 📧 Successful Email Notification
 
-> 📷 Add `kubectl get pods` Screenshot here
+<p align="center"> <img src="images/email-notification.png" alt="Email Notification" width="100%"> </p>
 
----
-
-## Kubernetes Services
-
-> 📷 Add `kubectl get svc` Screenshot here
-
----
-
-## Rolling Update Demo
-
-> 📷 Add Rolling Update Screenshot here
-
----
-
-## Rollback Demo
-
-> 📷 Add Rollback Screenshot here
-
----
-
-## Successful Email Notification
-
-> 📷 Add Email Screenshot here
-
----
+<p align="center"> <em>Automated email notification sent by Jenkins after successful pipeline execution and deployment.</em> </p>
 
 # 🔍 Useful Kubernetes Commands
 

@@ -718,13 +718,13 @@ The following screenshots demonstrate different stages of the project.
 
 ## 📚 Jenkins Shared Library
 
-<p align="center"> <img src="images/jenkins-shared-library.png" alt="Jenkins Shared Library" width="100%"> </p>
+![image_alt}()
 
 <p align="center"> <em>Declarative Jenkins Pipeline integrated with a Shared Library to improve reusability, maintainability, and pipeline organization.</em> </p>
 
 ## 🔍 SonarQube Dashboard
 
-![image alt]()
+![image alt](https://github.com/Rudra392-netizen/fullstack-devops-lab/blob/main/Screenshot%202026-04-25%20162242.png?raw=true)
 
 <p align="center"> <em>SonarQube analysis dashboard showing a successful Quality Gate with maintainability, reliability, and security checks.</em> </p>
 
@@ -734,11 +734,13 @@ The following screenshots demonstrate different stages of the project.
 
 ## ☸️ Kubernetes Pods & Services
 
+![image_alt]()
 
 <p align="center"> <em>Running Kubernetes Pods and Services for the frontend, backend, and MongoDB components inside the Kind cluster.</em> </p>
 
 ## 📧 Successful Email Notification
 
+![image_alt[()
 
 <p align="center"> <em>Automated email notification sent by Jenkins after successful pipeline execution and deployment.</em> </p>
 

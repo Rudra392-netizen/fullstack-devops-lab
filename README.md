@@ -178,6 +178,7 @@ Quality Gate                 Trivy Scan
 | Code Quality | SonarQube |
 | Security Scanning | Trivy |
 | Orchestration | Kubernetes (Kind) |
+| Package Manager | Helm |
 
 ---
 
@@ -189,44 +190,51 @@ fullstack-devops-lab
 │
 
 ├── Application-Code/
-
-│ ├── frontend/
-
-│ ├── backend/
-
-│ └── database/
+│   ├── frontend/
+│   ├── backend/
+│   └── database/
 
 │
 
 ├── K8s/
+│   ├── frontend/
+│   ├── backend/
+│   ├── mongodb/
+│   ├── ingress/
+│   ├── config/
+│   └── namespace/
 
-│ ├── frontend/
+│
 
-│ ├── backend/
-
-│ ├── mongodb/
-
-│ ├── ingress/
-
-│ ├── config/
-
-│ └── namespace/
+├── helm/
+│   └── my-3tier-app/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       ├── charts/
+│       └── templates/
+│           ├── frontend-deployment.yaml
+│           ├── frontend-service.yaml
+│           ├── backend-deployment.yaml
+│           ├── backend-service.yaml
+│           ├── mongodb-deployment.yaml
+│           ├── mongodb-service.yaml
+│           ├── mongodb-PVC.yaml
+│           ├── mongodb-secret.yaml
+│           ├── configmap.yaml
+│           ├── ingress.yaml
+│           ├── _helpers.tpl
+│           ├── NOTES.txt
+│           ├── httproute.yaml
+│           └── tests/
+│               └── test-connection.yaml
 
 │
 
 ├── Jenkinsfile
-
 ├── README.md
-
 ├── trivy.report.txt
-
 └── .gitignore
 ```
-
----
-
----
-
 # ⚙️ CI/CD Pipeline
 
 ## 📌 Overview
@@ -683,6 +691,96 @@ Version 1 Running Again
 
 ---
 
+## 📦 Helm Chart Deployment
+## 📖 Overview
+
+After deploying the application using Kubernetes manifests, I packaged the entire application into a Helm Chart to simplify Kubernetes application management.
+
+Instead of applying multiple YAML files individually, Helm allows the complete application to be installed, upgraded, rolled back, and removed using a single command.
+
+This helped me understand how Helm improves deployment consistency, reusability, and version management for Kubernetes applications.
+
+## 📂 Helm Chart Structure
+helm/
+
+└── my-3tier-app/
+
+    ├── Chart.yaml
+
+    ├── values.yaml
+
+    ├── templates/
+
+    │      ├── frontend-deployment.yaml
+    │      ├── frontend-service.yaml
+    │      ├── backend-deployment.yaml
+    │      ├── backend-service.yaml
+    │      ├── mongodb-deployment.yaml
+    │      ├── mongodb-service.yaml
+    │      ├── mongodb-pvc.yaml
+    │      ├── configmap.yaml
+    │      ├── secret.yaml
+    │      └── ingress.yaml
+
+    └── charts/
+
+## ⚙️ Helm Features Implemented
+Parameterized application configuration using values.yaml
+Reusable Kubernetes manifests using Helm Templates
+Helm installation and upgrade support
+Application version management
+Easy rollback using Helm releases
+Centralized configuration management
+
+## 🚀 Helm Deployment Workflow
+Developer
+
+      │
+
+      ▼
+
+Update values.yaml
+
+      │
+
+      ▼
+
+helm install my-3tier-app .
+
+      │
+
+      ▼
+
+Helm Creates Kubernetes Resources
+
+      │
+
+      ▼
+
+Deployments
+
+Services
+
+ConfigMaps
+
+Secrets
+
+Ingress
+
+Persistent Volume Claims
+
+      │
+
+      ▼
+
+Application Running Successfully
+
+## 💡 What I Learned
+
+Implementing Helm helped me understand how production Kubernetes applications are packaged and managed.
+
+I learned how Helm templates reduce YAML duplication, how values.yaml makes deployments configurable, and how Helm simplifies application installation, upgrades, and rollback using release management.
+
 # 📧 Email Notifications
 
 To improve pipeline monitoring, Jenkins automatically sends email notifications after each pipeline execution.
@@ -737,6 +835,23 @@ The following screenshots demonstrate different stages of the project.
 
 
 ---
+
+##  Add Helm screenshots
+
+## Helm Chart Structure
+<img width="1226" height="561" alt="Screenshot 2026-07-11 185119" src="https://github.com/user-attachments/assets/6d518c5d-e5dc-411d-a112-f85d4d5fefd9" />
+
+
+## Helm Install
+<img width="1237" height="50" alt="Screenshot 2026-07-11 185051" src="https://github.com/user-attachments/assets/d555def8-fdd2-40bf-bd3b-9a371507b051" />
+
+
+## Helm List
+<img width="1287" height="65" alt="Screenshot 2026-07-11 185206" src="https://github.com/user-attachments/assets/226c34cf-f7c2-49c8-8ab3-1186b9f48127" />
+
+## Application Running via Helm
+<img width="843" height="557" alt="Screenshot 2026-07-11 185503" src="https://github.com/user-attachments/assets/284748f6-1d7d-4166-8520-08bb7e6ab566" />
+
 
 ## Rolling Update Demo
 <img width="1093" height="262" alt="Screenshot 2026-06-26 202204" src="https://github.com/user-attachments/assets/4ec12cd0-a0fd-40a4-9340-f827d4de2459" />
@@ -938,6 +1053,10 @@ Through this project, I learned:
 - Performing Rolling Updates and Rollbacks.
 - Automating deployment notifications.
 - Organizing Jenkins pipelines using Shared Libraries.
+- - Packaging Kubernetes applications using Helm.
+- Creating reusable Helm templates.
+- Managing application configuration with values.yaml.
+- Deploying and upgrading applications using Helm.
 
 This project also taught me how different DevOps tools integrate to automate software delivery from source code to a running Kubernetes application.
 

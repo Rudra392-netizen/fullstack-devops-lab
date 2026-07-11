@@ -708,62 +708,61 @@ Instead of manually checking the Jenkins dashboard, the pipeline status is deliv
 The following screenshots demonstrate different stages of the project.
 
 ## Jenkins Pipeline
-
-> 📷 Add Jenkins Pipeline Screenshot here
+<img width="1895" height="726" alt="Screenshot 2026-04-25 162224" src="https://github.com/user-attachments/assets/e4b45e82-8902-4ba6-8c74-82a98d61a410" />
 
 ---
 
 ## Jenkins Shared Library
 
-> 📷 Add VS Code Screenshot of Shared Library here
+<img width="652" height="949" alt="Screenshot 2026-04-25 162548" src="https://github.com/user-attachments/assets/784898e0-3e19-40b5-b7eb-c952dd1fee23" />
+
+
+<img width="1492" height="767" alt="Screenshot 2026-06-26 213903" src="https://github.com/user-attachments/assets/98effa0d-02eb-49f7-9fbb-db1f78dd870a" />
+
 
 ---
 
 ## SonarQube Dashboard
 
-> 📷 Add SonarQube Dashboard Screenshot here
+<img width="1919" height="929" alt="Screenshot 2026-04-25 162242" src="https://github.com/user-attachments/assets/8bb7fd9e-6bf4-4943-8a89-efc3a4d8896e" />
 
 ---
 
 ## DockerHub Repository
 
-> 📷 Add DockerHub Screenshot here
+<img width="1882" height="701" alt="Screenshot 2026-06-26 200010" src="https://github.com/user-attachments/assets/5d580643-edce-4ac3-a6b4-ace02e159b08" />
+
 
 ---
 
 ## Trivy Scan Report
 
-> 📷 Add Trivy Report Screenshot here
+<img width="1777" height="836" alt="Screenshot 2026-04-25 164400" src="https://github.com/user-attachments/assets/cb50b41a-f3b4-4b92-913d-18d7fb30701d" />
+
 
 ---
 
 ## Kubernetes Pods
+<img width="813" height="528" alt="Screenshot 2026-04-25 162504" src="https://github.com/user-attachments/assets/5e97794a-aa6d-4440-aae5-ca74a8e43486" />
 
-> 📷 Add `kubectl get pods` Screenshot here
-
----
-
-## Kubernetes Services
-
-> 📷 Add `kubectl get svc` Screenshot here
 
 ---
 
 ## Rolling Update Demo
+<img width="1093" height="262" alt="Screenshot 2026-06-26 202204" src="https://github.com/user-attachments/assets/4ec12cd0-a0fd-40a4-9340-f827d4de2459" />
 
-> 📷 Add Rolling Update Screenshot here
 
 ---
 
 ## Rollback Demo
+<img width="1105" height="86" alt="Screenshot 2026-06-26 202548" src="https://github.com/user-attachments/assets/209036d6-4b95-4d2d-93a4-46adf9620386" />
 
-> 📷 Add Rollback Screenshot here
 
 ---
 
 ## Successful Email Notification
+<img width="1517" height="717" alt="Screenshot 2026-06-26 200152" src="https://github.com/user-attachments/assets/1dec2897-1fe2-40aa-a1dc-02f45f6aec8d" />
 
-> 📷 Add Email Screenshot here
 
 ---
 

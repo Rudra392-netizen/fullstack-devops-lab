@@ -407,10 +407,6 @@ The purpose of this integration is to identify potential issues early in the dev
 - Vulnerabilities
 - Maintainability Problems
 
-> 📸 **Screenshot Placeholder**
->
-> Add your SonarQube Dashboard screenshot here.
-
 ---
 
 # 🛡️ Trivy Security Scanning
@@ -428,9 +424,6 @@ This improves the security of the deployment process and introduces basic DevSec
 - Dependency Vulnerabilities
 - Security Risks inside Docker Images
 
-> 📸 **Screenshot Placeholder**
->
-> Add your Trivy report or terminal output here.
 
 ---
 
@@ -452,9 +445,6 @@ This allows Kubernetes to pull the latest application images during deployment.
 
 Automating image publishing removes manual intervention and keeps deployments consistent.
 
-> 📸 **Screenshot Placeholder**
->
-> Add your DockerHub repository screenshot showing the latest image.
 
 ---
 

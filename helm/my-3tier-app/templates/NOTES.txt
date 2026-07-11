@@ -1,0 +1,13 @@
+Thank you for installing the my-3tier-app Helm Chart.
+
+To check the deployed resources:
+
+kubectl get all -n {{ .Values.namespace }}
+
+To check the Ingress:
+
+kubectl get ingress -n {{ .Values.namespace }}
+
+To uninstall the release:
+
+helm uninstall <release-name> -n {{ .Values.namespace }}

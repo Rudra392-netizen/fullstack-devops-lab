@@ -1,0 +1,157 @@
+############################################################
+# Global Configuration
+############################################################
+
+namespace: default
+
+imagePullSecrets:
+  - name: dockerhub-secret
+
+############################################################
+# Frontend
+############################################################
+
+frontend:
+
+  replicaCount: 2
+
+  revisionHistoryLimit: 10
+
+  strategy:
+    type: RollingUpdate
+
+  image:
+    repository: aiml074/frontend
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  service:
+    name: frontend-service
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+############################################################
+# Backend
+############################################################
+
+backend:
+
+  replicaCount: 3
+
+  revisionHistoryLimit: 10
+
+  strategy:
+    type: RollingUpdate
+
+  image:
+    repository: aiml074/backend
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  service:
+    name: backend-service
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+############################################################
+# MongoDB
+############################################################
+
+mongodb:
+
+  replicaCount: 1
+
+  image:
+    repository: mongo
+    tag: "6.0"
+    pullPolicy: IfNotPresent
+
+  service:
+    name: mongodb-service
+    type: ClusterIP
+    port: 27017
+    targetPort: 27017
+
+  persistence:
+    enabled: true
+
+    pvcName: mongodb-pvc
+
+    accessMode: ReadWriteOnce
+
+    storage: 5Gi
+
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "256Mi"
+
+    limits:
+      cpu: "1"
+      memory: "1Gi"
+
+############################################################
+# ConfigMap
+############################################################
+
+config:
+
+  mongodb:
+
+    database: mydb
+
+############################################################
+# Secret
+############################################################
+
+secret:
+
+  mongodb:
+
+    username: admin
+
+    password: admin123
+
+############################################################
+# Ingress
+############################################################
+
+ingress:
+
+  enabled: true
+
+  name: frontend-ingress
+
+  className: nginx
+
+  host: myapp.example.com
+
+  path: /
+
+  pathType: Prefix
+
+  service:
+
+    name: frontend-service
+
+    port: 80
